@@ -3,7 +3,7 @@ package bankSystem.employee;
 import bankSystem.account.UserAccountEn;
 
 public class EmployeeEn {
-    private int id;
+    private int idEmployee;
     private String firstName;
     private String lastName;
     private int employeeCode;
@@ -13,7 +13,7 @@ public class EmployeeEn {
     @Override
     public String toString() {
         return "EmployeeEn{" +
-                "id=" + id +
+                "id=" + idEmployee +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", employeeCode=" + employeeCode +
@@ -25,12 +25,12 @@ public class EmployeeEn {
     public EmployeeEn() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdEmployee() {
+        return idEmployee;
     }
 
-    public EmployeeEn setId(int id) {
-        this.id = id;
+    public EmployeeEn setIdEmployee(int idEmployee) {
+        this.idEmployee = idEmployee;
         return this;
     }
 

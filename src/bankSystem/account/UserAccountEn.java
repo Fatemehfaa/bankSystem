@@ -1,8 +1,5 @@
 package bankSystem.account;
 
-import bankSystem.employee.EmployeeEn;
-import bankSystem.scanner.ScannerSingleton;
-
 // login
 public class UserAccountEn {
     private int idAccount;
@@ -69,7 +66,7 @@ public class UserAccountEn {
         if (role.equals("BOSS")) {
             this.setUsername("admin");
             this.setPassword("1234");
-            this.role = role;
+            this.role =role;
 
         }
         return this;
@@ -83,4 +80,5 @@ public class UserAccountEn {
                 ", role=" + role +
                 '}';
     }
+
 }

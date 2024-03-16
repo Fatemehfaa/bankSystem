@@ -35,10 +35,14 @@ public class UserAccountSer {
                         String Role = ScannerSingleton.getScanner().next();
                         if(Role.equals(RoleAccount.BOSS.name())){
                             userAccountEn.setUsername("admin");
+                            userAccountEn.setPassword("1234");
                         } else if (Role.equals(RoleAccount.CUSTOMER.name())) {
-                            
+
                         } else if (Role.equals(RoleAccount.EMPLOYEE.name())) {
-                            
+                            System.out.println("user name");
+                            userAccountEn.setUsername(ScannerSingleton.getScanner().next());
+                            System.out.println("password");
+                            userAccountEn.setPassword(ScannerSingleton.getScanner().next());
                         }
 
                     }catch (Exception e){

@@ -1,5 +1,6 @@
 package bankSystem.employee;
 
+import bankSystem.account.RoleAccount;
 import bankSystem.account.UserAccountDao;
 import bankSystem.scanner.ScannerSingleton;
 
@@ -20,26 +21,28 @@ public class EmployeeSer {
             int selectUser = ScannerSingleton.getScanner().nextInt();
             switch (selectUser){
                 case 1:
-                    try{
+                    try {
                         EmployeeEn employeeEn = new EmployeeEn();
-                        System.out.println("enter first name:");
-                        employeeEn.setFirstName(ScannerSingleton.getScanner().next());
-                        System.out.println("enter last name:");
-                        employeeEn.setLastName(ScannerSingleton.getScanner().next());
-                        System.out.println("enter bankSystem.employee code:");
-                        employeeEn.setEmployeeCode(ScannerSingleton.getScanner().nextInt());
-                        System.out.println("enter national code:");
-                        employeeEn.setNationalCode(ScannerSingleton.getScanner().next());
-                        System.out.println("bank code: ");
-                        employeeEn.setBankCode(ScannerSingleton.getScanner().nextInt());
-                        EmployeeDao.insert(employeeEn);
-                    }catch (Exception e){
-                        System.out.println(e.getMessage());
-                    }
+                        if (RoleAccount.BOSS.name().equals("BOSS"))
+                            System.out.println("enter first name:");
+                            employeeEn.setFirstName(ScannerSingleton.getScanner().next());
+                            System.out.println("enter last name:");
+                            employeeEn.setLastName(ScannerSingleton.getScanner().next());
+                            System.out.println("enter bankSystem.employee code:");
+                            employeeEn.setEmployeeCode(ScannerSingleton.getScanner().nextInt());
+                            System.out.println("enter national code:");
+                            employeeEn.setNationalCode(ScannerSingleton.getScanner().next());
+                            System.out.println("bank code: ");
+                            employeeEn.setBankCode(ScannerSingleton.getScanner().nextInt());
+                            EmployeeDao.insert(employeeEn);
+                        }catch(Exception e){
+                            System.out.println(e.getMessage());
+                        }
                     break;
                 case 2:
                     try {
-                        EmployeeDao.creatAccount();
+                        EmployeeEn employeeEn =new EmployeeEn();
+                        EmployeeDao.creatAccount(employeeEn);
                     }catch (Exception e){
                         System.out.println(e.getMessage());
                     }
