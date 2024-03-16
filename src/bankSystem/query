@@ -1,0 +1,7 @@
+create database if not exists bank;
+create table if not exists bank.EMPLOYEE (id int, firstname varchar(20) NOT NULL , lastname varchar(20) NOT NULL ,employeeCode int NOT NULL,
+nationalCode varchar(10) NOT NULL, bankCode int,primary key (id));
+
+create table if not exists bank.USERACCOUNT(IDACCOUNT INT , USERNAME VARCHAR(20) NOT NULL , PASSWORD VARCHAR(20) NOT NULL,
+ ROLEACCOUNT VARCHAR(20),PRIMARY KEY (IDACCOUNT));
+
